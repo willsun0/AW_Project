@@ -1,14 +1,8 @@
-/* ============================================
-   Ancient World Capstone Project — Neobrutalist Redesign
-   Zero gradients, zero glassmorphism, zero border-radius
-   ============================================ */
-
-/* --- Global border-radius reset --- */
 *, *::before, *::after {
     border-radius: 0 !important;
 }
 
-/* --- CSS Custom Properties --- */
+
 :root {
     --bg:          #000000;
     --bg-2:        #111111;
@@ -16,8 +10,8 @@
     --white:       #ffffff;
     --off-white:   #cccccc;
     --muted:       #888888;
-    --border:      #ff0000;   /* red for borders */
-    --link-blue:   #0000ff;   /* blue for links */
+    --border:      #ff0000;
+    --link-blue:   #0000ff;
     --font-heading: 'Playfair Display', 'Georgia', serif;
     --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --ease:        cubic-bezier(0.4, 0, 0.2, 1);
@@ -25,14 +19,14 @@
     --spacing-lg:   2rem;
 }
 
-/* --- Reset & Base (margin/padding/box-sizing) --- */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- Accent line (replaces .top-border) --- */
+
 .accent-line {
     position: fixed;
     top: 0;
@@ -83,7 +77,7 @@ img {
 }
 
 
-/* --- Navigation --- */
+
 .nav {
     position: sticky;
     top: 3px;
@@ -133,12 +127,12 @@ img {
     color: var(--white);
 }
 
-/* Remove animated underline — static underline only for active */
+
 .nav-links a::after {
     display: none;
 }
 
-/* --- Page Badge --- */
+
 .pill-badge {
     display: inline-block;
     font-size: 0.7rem;
@@ -151,7 +145,7 @@ img {
     margin-bottom: 1rem;
 }
 
-/* --- Section Label --- */
+
 .section-label {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -161,7 +155,7 @@ img {
     font-weight: 600;
 }
 
-/* --- Cards --- */
+
 .card {
     border: 1px solid var(--border);
     background: var(--bg-card);
@@ -188,7 +182,7 @@ img {
     padding-left: 0;
 }
 
-/* --- Analysis Paragraph --- */
+
 .analysis {
     border-left: 2px solid var(--border);
     padding-left: 1rem;
@@ -198,7 +192,7 @@ img {
     font-size: 0.95rem;
 }
 
-/* --- Two-Column Layout --- */
+
 .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -210,13 +204,13 @@ img {
     margin-bottom: 0;
 }
 
-/* --- Alternating Section Background --- */
+
 .alt-bg {
     background: var(--bg-2);
     padding: 2rem 0;
 }
 
-/* --- Stat Strip --- */
+
 .stat-strip {
     display: flex;
     justify-content: center;
@@ -256,7 +250,7 @@ img {
     margin-top: 0.5rem;
 }
 
-/* --- Feature Grid --- */
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -291,7 +285,7 @@ img {
     line-height: 1.6;
 }
 
-/* --- Takeaway Grid (Conclusion Page) --- */
+
 .takeaway-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -303,7 +297,7 @@ img {
     padding: 1.5rem;
 }
 
-/* --- Image Row --- */
+
 .img-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -317,7 +311,7 @@ img {
     object-fit: cover;
 }
 
-/* --- Image Caption --- */
+
 .img-caption {
     font-size: 0.75rem;
     color: var(--muted);
@@ -326,7 +320,7 @@ img {
     text-align: center;
 }
 
-/* --- Wave Divider --- */
+
 .wave-divider {
     width: 100%;
     overflow: hidden;
@@ -339,7 +333,7 @@ img {
     height: 60px;
 }
 
-/* --- Marquee Strip --- */
+
 .marquee-strip {
     background: var(--white);
     overflow: hidden;
@@ -369,7 +363,7 @@ img {
     100% { transform: translateX(-50%); }
 }
 
-/* --- Back to Top Button --- */
+
 .back-top {
     position: fixed;
     bottom: 2rem;
@@ -402,7 +396,7 @@ img {
     color: var(--white);
 }
 
-/* --- Hero Grid --- */
+
 .hero-grid {
     display: grid;
     grid-template-columns: 55% 45%;
@@ -442,7 +436,7 @@ img {
     color: var(--white);
 }
 
-/* Large decorative text in right column */
+
 .hero-text .decorative-text {
     font-family: var(--font-heading);
     font-size: clamp(4rem, 10vw, 9rem);
@@ -452,7 +446,7 @@ img {
     white-space: nowrap;
 }
 
-/* --- Typewriter --- */
+
 .typewriter {
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -472,7 +466,7 @@ img {
     50% { opacity: 0; }
 }
 
-/* --- Info Block --- */
+
 .info-block {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -501,7 +495,7 @@ img {
     font-size: 0.85rem;
 }
 
-/* --- CTA Button --- */
+
 .cta-button, .btn-pill {
     display: inline-flex;
     align-items: center;
@@ -534,7 +528,7 @@ img {
     transform: translateX(4px);
 }
 
-/* --- Content Section --- */
+
 .content {
     max-width: 900px;
     margin: 0 auto;
@@ -573,7 +567,7 @@ img {
     font-size: 1.05rem;
 }
 
-/* --- Blockquote / Pull Quote --- */
+
 .blockquote {
     font-family: var(--font-heading);
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
@@ -588,7 +582,7 @@ img {
     border-left: 4px solid var(--border);
 }
 
-/* --- Watermark --- */
+
 .watermark {
     position: absolute;
     font-family: var(--font-heading);
@@ -606,7 +600,7 @@ img {
     opacity: 0.4;
 }
 
-/* --- Teaser / Intro --- */
+
 .teaser {
     font-size: 1.15rem;
     line-height: 1.9;
@@ -624,7 +618,7 @@ img {
     margin-bottom: 2rem;
 }
 
-/* --- Visual Divider --- */
+
 .visual-divider {
     display: flex;
     align-items: center;
@@ -635,7 +629,7 @@ img {
     opacity: 0.5;
 }
 
-/* --- Scroll Reveal --- */
+
 .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -647,7 +641,7 @@ img {
     transform: translateY(0);
 }
 
-/* --- Placeholders --- */
+
 .insert-placeholder {
     border: 2px dashed var(--border);
     padding: 1.5rem;
@@ -686,14 +680,14 @@ img {
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Section Divider --- */
+
 .section-divider {
     border: none;
     border-top: 1px solid var(--border);
     margin: 3rem 0;
 }
 
-/* --- Footer --- */
+
 .footer {
     padding: 2.5rem 2rem;
     border-top: 1px solid var(--border);
@@ -754,7 +748,7 @@ img {
     margin-top: 1.5rem;
 }
 
-/* --- Footnotes --- */
+
 .footnote-ref {
     font-size: 0.75em;
     vertical-align: super;
@@ -799,7 +793,7 @@ img {
     color: var(--white);
 }
 
-/* --- Bibliography --- */
+
 .bibliography-note {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -833,7 +827,7 @@ img {
     margin-right: 0.5rem;
 }
 
-/* --- Timeline (CSS-only) --- */
+
 .timeline-section {
     padding: 3rem 0;
     position: relative;
@@ -880,7 +874,7 @@ img {
     letter-spacing: 0.08em;
 }
 
-/* --- Parallel Timeline (Comparison Page) --- */
+
 .parallel-timeline {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -927,7 +921,7 @@ img {
     white-space: nowrap;
 }
 
-/* --- Split Panel (Contrast Page) --- */
+
 .split-panel {
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
@@ -944,7 +938,7 @@ img {
     width: 1px;
 }
 
-/* --- Spectrum Bar (TWE Page) --- */
+
 .spectrum-section {
     padding: 2rem 0;
 }
@@ -986,7 +980,7 @@ img {
     margin-top: 1rem;
 }
 
-/* --- Exhibit Card (TWE Page) --- */
+
 .exhibit-card {
     max-width: 600px;
     margin: 2rem auto;
@@ -1004,7 +998,7 @@ img {
     background: var(--bg-card);
 }
 
-/* --- CTA Prompt (Conclusion Page) --- */
+
 .cta-prompt {
     text-align: center;
     padding: var(--section-pad) 2rem;
@@ -1024,7 +1018,7 @@ img {
     flex-wrap: wrap;
 }
 
-/* --- Closing Visual (Conclusion Page) --- */
+
 .closing-visual {
     padding: var(--section-pad) 0;
 }
@@ -1037,7 +1031,7 @@ img {
     margin-bottom: 2rem;
 }
 
-/* --- Responsive: Tablet --- */
+
 @media (max-width: 768px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -1133,7 +1127,7 @@ img {
     }
 }
 
-/* --- Responsive: Mobile (375px) --- */
+
 @media (max-width: 480px) {
     body {
         font-size: 0.95rem;
@@ -1190,7 +1184,7 @@ img {
         font-size: 1rem;
     }
 }
-/* Globe container */
+
 .globe-container {
     width: 100%;
     height: 600px;
@@ -1203,7 +1197,7 @@ img {
     height: 600px !important;
 }
 
-/* Placeholder boxes */
+
 .placeholder-box {
     border: 1px dashed var(--border);
     padding: 2rem;
@@ -1217,16 +1211,14 @@ img {
     content: 'INSERT TEXT HERE';
     font-size: 1.1rem;
 }
-/* ============================================
-   POLISH ADDITIONS — Image & Figure Support
-   ============================================ */
 
-/* Figure element base */
+
+
 figure {
     margin: 1.5rem 0;
 }
 
-/* Figcaption matches existing .img-caption */
+
 figcaption {
     font-size: 0.75rem;
     color: var(--muted);
@@ -1235,7 +1227,7 @@ figcaption {
     line-height: 1.5;
 }
 
-/* Ensure images inside figures get border treatment */
+
 figure img {
     display: block;
     width: 100%;
@@ -1243,7 +1235,7 @@ figure img {
     object-fit: cover;
 }
 
-/* Image figure wrapper (thesis page, centered images) */
+
 .img-figure {
     margin: 2.5rem 0;
     text-align: center;
@@ -1256,17 +1248,17 @@ figure img {
     box-shadow: 4px 4px 0 var(--border);
 }
 
-/* Comparison images grid */
+
 .comparison-images figure {
     margin: 0;
 }
 
-/* Split panel images */
+
 .split-panel figure {
     margin: 1rem 0 0;
 }
 
-/* Footnote superscript links */
+
 sup a {
     color: var(--white);
     font-size: 0.75em;
@@ -1278,14 +1270,14 @@ sup a:hover {
     color: var(--border);
 }
 
-/* Section divider line */
+
 .section-divider {
     border: none;
     border-top: 1px solid var(--border);
     margin: 0;
 }
 
-/* Intro paragraph styling */
+
 p.intro {
     font-size: 1.05rem;
     line-height: 1.8;
@@ -1295,33 +1287,29 @@ p.intro {
     padding-left: 1.25rem;
 }
 
-/* Spacing between paragraphs in content */
+
 .content p {
     margin-bottom: 1.25rem;
 }
 
-/* ============================================
-   VISUAL POLISH — spacing & hover refinements
-   ============================================ */
 
-/* Footnotes section spacing */
 .footnotes {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border);
 }
 
-/* Bib entry numbers — slightly larger */
+
 .bib-number {
     font-size: 1rem;
 }
 
-/* Active nav link color tweak for clarity */
+
 .nav-links a.active {
     color: var(--white);
 }
 
-/* Footer clean-up */
+
 .footer {
     border-top: 1px solid var(--border);
     padding: 3rem 2rem;
@@ -1378,7 +1366,7 @@ p.intro {
     letter-spacing: 0.5rem;
 }
 
-/* Watermark text (contrast/conclusion pages) */
+
 .watermark {
     position: absolute;
     top: 4rem;
@@ -1395,7 +1383,7 @@ p.intro {
     z-index: 0;
 }
 
-/* Subtitle text on homepage */
+
 .subtitle {
     font-size: 1rem;
     color: var(--muted);
@@ -1403,7 +1391,7 @@ p.intro {
     letter-spacing: 0.15em;
 }
 
-/* Blockquote styling */
+
 .blockquote {
     border: 1px solid var(--border);
     background: var(--bg-card);
@@ -1415,7 +1403,7 @@ p.intro {
     color: var(--off-white);
 }
 
-/* Teaser section */
+
 .teaser {
     max-width: 900px;
     margin: 0 auto;
@@ -1426,12 +1414,12 @@ p.intro {
     margin-bottom: 1rem;
 }
 
-/* Spectrum section polish */
+
 .spectrum-section .spectrum-bar {
     transition: none;
 }
 
-/* Reveal animation */
+
 .reveal {
     opacity: 0;
     transform: translateY(20px);
