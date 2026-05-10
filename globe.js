@@ -1,6 +1,3 @@
-/**
- * globe.js — Three.js Earth globe with scroll-driven cinematic animation
- */
 (function () {
   'use strict';
 
@@ -13,7 +10,7 @@
     var w = container.clientWidth;
     var h = container.clientHeight || 600;
 
-    // Scene / Camera / Renderer
+
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 2000);
     camera.position.set(0, 0, 3);
@@ -24,7 +21,7 @@
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
-    // Lighting
+
     var ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
     scene.add(ambientLight);
 
@@ -32,7 +29,7 @@
     dirLight.position.set(5, 3, 5);
     scene.add(dirLight);
 
-    // Earth
+
     var earthRadius = 1;
     var earthGeo = new THREE.SphereGeometry(earthRadius, 64, 64);
     var textureLoader = new THREE.TextureLoader();
@@ -47,7 +44,7 @@
     var earth = new THREE.Mesh(earthGeo, earthMat);
     scene.add(earth);
 
-    // Atmosphere glow
+
     var atmosGeo = new THREE.SphereGeometry(earthRadius * 1.15, 64, 64);
     var atmosMat = new THREE.MeshBasicMaterial({
       color: 0x1a1a2e,
@@ -58,7 +55,7 @@
     var atmosphere = new THREE.Mesh(atmosGeo, atmosMat);
     scene.add(atmosphere);
 
-    // Starfield
+
     var STAR_COUNT = 2000;
     var starPositions = new Float32Array(STAR_COUNT * 3);
     for (var i = 0; i < STAR_COUNT; i++) {
@@ -75,7 +72,7 @@
     var stars = new THREE.Points(starGeo, starMat);
     scene.add(stars);
 
-    // Helpers
+
     function latLngToVec3(lat, lng, r) {
       var phi = (90 - lat) * (Math.PI / 180);
       var theta = (lng + 180) * (Math.PI / 180);
@@ -90,11 +87,11 @@
       return a + (b - a) * t;
     }
 
-    // Markers
+
     var MARKER_RADIUS = earthRadius * 1.01;
     var markerGeo = new THREE.SphereGeometry(0.025, 16, 16);
 
-    // Rome: 41.9° N, 12.5° E — gold
+
     var romePos = latLngToVec3(41.9, 12.5, MARKER_RADIUS);
     var romeMarker = new THREE.Mesh(
       markerGeo,
@@ -103,7 +100,7 @@
     romeMarker.position.copy(romePos);
     scene.add(romeMarker);
 
-    // Washington DC: 38.9° N, -77.0° W — blue-white
+
     var dcPos = latLngToVec3(38.9, -77.0, MARKER_RADIUS);
     var dcMarker = new THREE.Mesh(
       markerGeo,
@@ -112,14 +109,14 @@
     dcMarker.position.copy(dcPos);
     scene.add(dcMarker);
 
-    // Camera animation state
+
     var cameraPullback = { x: 0,   y: 0,   z: 3.0 };
     var cameraRome     = { x: 0.5, y: 0.2, z: 1.4 };
     var cameraDC       = { x: -0.5, y: 0.2, z: 1.4 };
 
     var scrollProgress = 0;
 
-    // Overlay text
+
     var overlay = document.createElement('div');
     overlay.id = 'globe-overlay';
     overlay.textContent = 'Two thousand years later...';
@@ -142,7 +139,7 @@
     container.style.position = 'relative';
     container.appendChild(overlay);
 
-    // Camera update from scroll progress
+
     function updateCamera(progress) {
       var target = { x: 0, y: 0, z: 0 };
       var overlayOpacity = 0;
@@ -170,7 +167,7 @@
       overlay.style.opacity = overlayOpacity;
     }
 
-    // Scroll handler
+
     function onScroll() {
       var containerTop = container.offsetTop;
       var containerH   = container.offsetHeight;
@@ -191,7 +188,7 @@
       updateCamera(scrollProgress);
     }
 
-    // IntersectionObserver
+
     var scrollListenerAttached = false;
 
     var observer = new IntersectionObserver(
@@ -210,7 +207,7 @@
     );
     observer.observe(container);
 
-    // Animation loop
+
     function animate() {
       requestAnimationFrame(animate);
       earth.rotation.y += 0.001;
@@ -219,7 +216,7 @@
     }
     animate();
 
-    // Resize handler
+
     var resizeObserver = new ResizeObserver(function () {
       var newW = container.clientWidth;
       var newH = container.clientHeight || 600;
